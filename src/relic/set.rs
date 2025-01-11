@@ -15,15 +15,15 @@ impl RelicSetMap {
     }
 
     pub fn get_keys(&self) -> Vec<String> {
-        self.relic_set.keys().cloned().collect()
+        self.relic_set_map.keys().cloned().collect()
     }
 
     pub fn get_values(&self) -> Vec<RelicSet> {
-        self.relic_set.values().cloned().collect()
+        self.relic_set_map.values().cloned().collect()
     }
 
     pub fn get_value_by_key(&self, key: &str) -> Option<RelicSet> {
-        self.relic_set.get(key).cloned()
+        self.relic_set_map.get(key).cloned()
     }
 }
 

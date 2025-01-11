@@ -15,15 +15,15 @@ impl RelicSubAffixMap {
     }
 
     pub fn get_keys(&self) -> Vec<String> {
-        self.relic_sub_affix.keys().cloned().collect()
+        self.relic_sub_affix_map.keys().cloned().collect()
     }
 
     pub fn get_values(&self) -> Vec<RelicSubAffix> {
-        self.relic_sub_affix.values().cloned().collect()
+        self.relic_sub_affix_map.values().cloned().collect()
     }
 
     pub fn get_value_by_key(&self, key: &str) -> Option<RelicSubAffix> {
-        self.relic_sub_affix.get(key).cloned()
+        self.relic_sub_affix_map.get(key).cloned()
     }
 }
 
