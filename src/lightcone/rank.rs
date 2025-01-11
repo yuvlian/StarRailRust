@@ -8,7 +8,7 @@ pub struct LightconeRankMap {
 
 impl LightconeRankMap {
     pub async fn fetch_map(base_url: &BaseUrl, client: &Client) -> Result<Self, Box<dyn Error>> {
-        let url = format!("{}lightcone_ranks.json", base_url.as_str());
+        let url = format!("{}light_cone_ranks.json", base_url.as_str());
         let json_text = fetch_json(&url, client).await?;
         let v: Self = serde_json::from_str(&json_text)?;
         Ok(v)
