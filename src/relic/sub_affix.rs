@@ -1,12 +1,12 @@
 use crate::{BTreeMap, BaseUrl, Client, Deserialize, Error, fetch_json};
 
 #[derive(Deserialize, Clone, Debug)]
-pub struct RelicSubAffixList {
+pub struct RelicSubAffixMap {
     #[serde(flatten)]
     pub relic_sub_affix: BTreeMap<String, RelicSubAffix>,
 }
 
-impl RelicSubAffixList {
+impl RelicSubAffixMap {
     pub async fn fetch_map(base_url: &BaseUrl, client: &Client) -> Result<Self, Box<dyn Error>> {
         let url = format!("{}relic_sub_affixes.json", base_url.as_str());
         let json_text = fetch_json(&url, client).await?;

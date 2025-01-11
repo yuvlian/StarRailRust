@@ -1,12 +1,12 @@
 use crate::{BTreeMap, BaseUrl, Client, Deserialize, Error, fetch_json};
 
 #[derive(Deserialize, Clone, Debug)]
-pub struct RelicSetList {
+pub struct RelicSetMap {
     #[serde(flatten)]
     pub relic_set: BTreeMap<String, RelicSet>,
 }
 
-impl RelicSetList {
+impl RelicSetMap {
     pub async fn fetch_map(base_url: &BaseUrl, client: &Client) -> Result<Self, Box<dyn Error>> {
         let url = format!("{}relic_sets.json", base_url.as_str());
         let json_text = fetch_json(&url, client).await?;
