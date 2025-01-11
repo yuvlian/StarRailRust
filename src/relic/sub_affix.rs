@@ -3,7 +3,7 @@ use crate::{BTreeMap, BaseUrl, Client, Deserialize, Error, fetch_json};
 #[derive(Deserialize, Clone, Debug)]
 pub struct RelicSubAffixMap {
     #[serde(flatten)]
-    pub relic_sub_affix: BTreeMap<String, RelicSubAffix>,
+    pub relic_sub_affix_map: BTreeMap<String, RelicSubAffix>,
 }
 
 impl RelicSubAffixMap {

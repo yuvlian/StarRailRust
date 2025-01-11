@@ -3,7 +3,7 @@ use crate::{BTreeMap, BaseUrl, Client, Deserialize, Error, fetch_json};
 #[derive(Deserialize, Clone, Debug)]
 pub struct RelicSetMap {
     #[serde(flatten)]
-    pub relic_set: BTreeMap<String, RelicSet>,
+    pub relic_set_map: BTreeMap<String, RelicSet>,
 }
 
 impl RelicSetMap {
